@@ -1,0 +1,28 @@
+{
+  "name": "nest-monorep-micro",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nest-monorep-micro/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": [
+        "build"
+      ],
+      "options": {
+        "buildTarget": "nest-monorep-micro:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "nest-monorep-micro:build:development"
+        },
+        "production": {
+          "buildTarget": "nest-monorep-micro:build:production"
+        }
+      }
+    }
+  }
+}
